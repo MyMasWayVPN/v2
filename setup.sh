@@ -2,7 +2,12 @@
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
-
+echo -e "PLEASE WAIT" | lolcat
+sleep 3
+clear
+echo -e "Checking VPS" | lolcat
+sleep 3
+clear
 BURIQ () {
     curl -sS https://raw.githubusercontent.com/MyMasWayVPN/MyMasWayVPN.github.io > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
@@ -113,7 +118,7 @@ if [ "" = "$PKG_OK" ]; then
   echo -e "[ ${tyblue}NOTES${NC} ] After rebooting"
   sleep 1
   echo -e "[ ${tyblue}NOTES${NC} ] Then run this script again"
-  echo -e "[ ${tyblue}NOTES${NC} ] Notes, Script Mod By ARH-PROJECT"
+  echo -e "[ ${tyblue}NOTES${NC} ] Notes, Script Mod By MasWayVPN"
   echo -e "[ ${tyblue}NOTES${NC} ] if you understand then tap enter now.."
   read
 else
@@ -203,9 +208,9 @@ if [ "$answer" == "${answer#[Yy]}" ] ;then
 wget https://raw.githubusercontent.com/MyMasWayVPN/v2/main/ssh/auto-pointing.sh && chmod +x auto-pointing.sh && ./auto-pointing.sh
 else
 yellow "Add Domain for vmess/vless/trojan dll"
-echo "-------------------------------------"
-echo "     Scipt MW-VPN "
-echo "-------------------------------------"
+echo "-------------------------------------" | lolcat
+echo "     Scipt MW-VPN " | lolcat
+echo "-------------------------------------" | lolcat
 read -rp "Input your domain : " -e pp
 echo "$pp" > /root/domain
 echo "$pp" > /root/scdomain
@@ -255,21 +260,36 @@ sleep 2
 clear
 wget https://raw.githubusercontent.com/MyMasWayVPN/v2/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 #Instal Xray
-echo -e "$green[INFO]$NC Install XRAY!"
-sleep 2
+echo "-------------------------------------" | lolcat
+echo "     Install Xray " | lolcat
+echo "-------------------------------------" | lolcat
+sleep 3
 clear
 wget https://raw.githubusercontent.com/MyMasWayVPN/v2/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 clear
 wget https://raw.githubusercontent.com/MyMasWayVPN/v2/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 clear
+echo "-------------------------------------" | lolcat
+echo "     Install Websocket " | lolcat
+echo "-------------------------------------" | lolcat
+sleep 3
+clear
 wget https://raw.githubusercontent.com/MyMasWayVPN/v2/main/websocket/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
 wget https://raw.githubusercontent.com/MyMasWayVPN/v2/main/websocket/nontls.sh && chmod +x nontls.sh && ./nontls.sh
 clear
+echo "-------------------------------------" | lolcat
+echo "     Install SlowDNS " | lolcat
+echo "-------------------------------------" | lolcat
+sleep 3
+clear
 wget https://raw.githubusercontent.com/MyMasWayVPN/v2/main/slowdnss/install-sldns.sh && chmod +x install-sldns.sh && ./install-sldns.sh
 clear
-echo -e "$green[INFO]$NC Download Extra Menu"
+echo "-------------------------------------" | lolcat
+echo "     X-TRA MENU " | lolcat
+echo "-------------------------------------" | lolcat
 sleep 2
+clear
 wget https://raw.githubusercontent.com/MyMasWayVPN/v2/main/update/update.sh && chmod +x update.sh && ./update.sh
 clear
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
@@ -352,7 +372,7 @@ echo "   - Admin Control" | tee -a log-install.txt
 echo "   - Restore Data" | tee -a log-install.txt
 echo "   - Full Orders For Various Services" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "   >>> Contact : t.me/r1f4n_1122 (Text Only)"  | tee -a log-install.txt
+echo "   >>> Contact : t.me/maswayvpn (Text Only)"  | tee -a log-install.txt
 echo ""
 echo ""
 echo "------------------------------------------------------------"
