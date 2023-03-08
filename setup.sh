@@ -202,22 +202,77 @@ wget -q https://raw.githubusercontent.com/MyMasWayVPN/v2/main/dependencies.sh;ch
 rm dependencies.sh
 clear
 
-echo -ne "[ ${yell}WARNING${NC} ] Tekan (y) jika ada domain sendiri, Tekan (n) untuk auto pointing ? (y/n)? "
-read answer
-if [ "$answer" == "${answer#[Yy]}" ] ;then
-wget https://raw.githubusercontent.com/MyMasWayVPN/v2/main/ssh/auto-pointing.sh && chmod +x auto-pointing.sh && ./auto-pointing.sh
-else
-yellow "Add Domain for vmess/vless/trojan dll"
-echo "-------------------------------------" | lolcat
-echo "     Scipt MW-VPN " | lolcat
-echo "-------------------------------------" | lolcat
-read -rp "Input your domain : " -e pp
-echo "$pp" > /root/domain
-echo "$pp" > /root/scdomain
-echo "$pp" > /etc/xray/domain
-echo "$pp" > /etc/xray/scdomain
-echo "IP=$pp" > /var/lib/ssnvpn-pro/ipvps.conf
-fi
+mkdir /var/lib/tarapkuhing;
+echo "IP=" >> /var/lib/ssnvpn-pro/ipvps.conf
+echo -e "==================================================" | lolcat
+echo -e   "\E[44;1;39m          ⇱ Select Your Domain ⇲                      \E[0m"
+echo -e   "\E[44;1;39m            ⇱ SC VPS PREMIUM ⇲                    \E[0m"
+echo -e "=================================================="  | lolcat
+echo -e   "[${GREEN} 01 ${NC}]. •mwvpn.tech"
+echo -e   "[${GREEN} 02 ${NC}]. •indossh.ninja"
+echo -e   "[${GREEN} 03 ${NC}]. •indossh.me"
+echo -e   "[${GREEN} 04 ${NC}]. •masway-vpn.my.id"
+echo -e   "[${GREEN} 05 ${NC}]. •myindossh.tech"
+echo -e   "[${GREEN} 06 ${NC}]. •nextvpn.xyz"
+echo -e "==================================================" | lolcat
+read -p   "Select From Options [ 1 - 6 ] : " domen
+echo -e  ""
+case $domen in
+1)
+clear
+echo -e "==================================================" | lolcat
+echo -e   "\E[44;1;39m        ⇱ Your Select SubDomain ⇲                      \E[0m"
+echo -e   "\E[44;1;39m                 ⇱ mwvpn.tech ⇲                    \E[0m"
+echo -e "=================================================="  | lolcat
+sleep 4
+wget https://raw.githubusercontent.com/MyMasWayVPN/v3/main/domen/mwvpn.sh && chmod +x mwvpn.sh && screen -S mwvpn ./mwvpn.sh
+;;
+2)
+clear
+echo -e "==================================================" | lolcat
+echo -e   "\E[44;1;39m        ⇱ Your Select SubDomain ⇲                      \E[0m"
+echo -e   "\E[44;1;39m                ⇱ indossh.ninja ⇲                    \E[0m"
+echo -e "=================================================="  | lolcat
+sleep 4
+wget https://raw.githubusercontent.com/MyMasWayVPN/v3/main/domen/indosshninja.sh && chmod +x indosshninja.sh && screen -S indosshninja ./indosshninja.sh
+;;
+3)
+clear
+echo -e "==================================================" | lolcat
+echo -e   "\E[44;1;39m        ⇱ Your Select SubDomain ⇲                      \E[0m"
+echo -e   "\E[44;1;39m                 ⇱ indossh.me ⇲                    \E[0m"
+echo -e "=================================================="  | lolcat
+sleep 4
+wget https://raw.githubusercontent.com/MyMasWayVPN/v3/main/domen/indosshme.sh && chmod +x indosshme.sh && screen -S indosshme ./insshme.sh
+;;
+4)
+clear
+echo -e "==================================================" | lolcat
+echo -e   "\E[44;1;39m        ⇱ Your Select SubDomain ⇲                      \E[0m"
+echo -e   "\E[44;1;39m            ⇱ masway-vpn.my.id ⇲                    \E[0m"
+echo -e "=================================================="  | lolcat
+sleep 4
+wget https://raw.githubusercontent.com/MyMasWayVPN/v3/main/domen/maswayvpn.sh && chmod +x maswayvpn.sh && screen -S maswayvpn ./maswayvpn.sh
+;;
+5)
+clear
+echo -e "==================================================" | lolcat
+echo -e   "\E[44;1;39m        ⇱ Your Select SubDomain ⇲                      \E[0m"
+echo -e   "\E[44;1;39m              ⇱ myindossh.tech ⇲                    \E[0m"
+echo -e "=================================================="  | lolcat
+sleep 4
+wget https://raw.githubusercontent.com/MyMasWayVPN/v3/main/domen/myindossh.sh && chmod +x myindossh.sh && screen -S myindossh ./myindossh.sh
+;;
+6)
+clear
+echo -e "==================================================" | lolcat
+echo -e   "\E[44;1;39m        ⇱ Your Select SubDomain ⇲                      \E[0m"
+echo -e   "\E[44;1;39m                 ⇱ nextvpn.xyz ⇲                    \E[0m"
+echo -e "=================================================="  | lolcat
+sleep 4
+wget https://raw.githubusercontent.com/MyMasWayVPN/v3/main/domen/ins-xray.sh && chmod +x nextvpn.sh && screen -S nextvpn ./nextvpn.sh
+;;
+esac
 
 #THEME RED
 cat <<EOF>> /etc/ssnvpn/theme/red
