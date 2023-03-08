@@ -202,6 +202,8 @@ wget -q https://raw.githubusercontent.com/MyMasWayVPN/v2/main/dependencies.sh;ch
 rm dependencies.sh
 clear
 
+apt install lolcat
+
 mkdir /var/lib/tarapkuhing;
 echo "IP=" >> /var/lib/ssnvpn-pro/ipvps.conf
 echo -e "==================================================" | lolcat
