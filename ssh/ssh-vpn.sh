@@ -216,10 +216,10 @@ connect = 127.0.0.1:1194
 END
 
 #SSLH
-apt-get install sslh -y
+#apt-get install sslh -y
 #Forward 443 = ws
-wget -O /etc/default/sslh "https://raw.githubusercontent.com/Afdhan/CDN/main/A/I/U/E/O/sslh.conf"
-service sslh restart
+#wget -O /etc/default/sslh "https://raw.githubusercontent.com/Afdhan/CDN/main/A/I/U/E/O/sslh.conf"
+#service sslh restart
 
 # make a certificate
 openssl genrsa -out key.pem 2048
