@@ -58,9 +58,26 @@ PERMISSION
 
 if [ "$res" = "Expired" ]; then
 Exp="\e[36mExpired\033[0m"
+rm -f /home/needupdate > /dev/null 2>&1
 else
 Exp=$(curl -sS https://raw.githubusercontent.com/MyMasWayVPN/MyMasWayVPN.github.io/main/wkwkwkwk | grep $MYIP | awk '{print $3}')
 fi
+Domen="$(cat /etc/xray/domain)"
+Name=$(curl -sS https://raw.githubusercontent.com/MyMasWayVPN/MyMasWayVPN.github.io/main/wkwkwkwk | grep $MYIP | awk '{print $2}')
+DATE=$(date +'%Y-%m-%d')
+datediff() {
+    d1=$(date -d "$1" +%s)
+    d2=$(date -d "$2" +%s)
+    echo -e "  $NC Expiry In   : $(( (d1 - d2) / 86400 )) Days"
+}
+mai="datediff "$Exp" "$DATE""
+
+today=`date -d "0 days" +"%Y-%m-%d"`
+
+# CERTIFICATE STATUS
+d1=$(date -d "$exp" +%s)
+d2=$(date -d "$today" +%s)
+certificate=$(( (d1 - d2) / 86400 ))
 # // Exporting Language to UTF-8
 export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
@@ -107,7 +124,7 @@ fi
 export IP=$( curl -s https://ipinfo.io/ip/ )
 
 # // SSH Websocket Proxy
-ssh_ws=$( systemctl status ws-epro | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
+ssh_ws=$( systemctl status ws-stunnel | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
 if [[ $ssh_ws == "running" ]]; then
     status_ws="${GREEN}ON${NC}"
 else
@@ -129,7 +146,8 @@ if [[ $xray == "running" ]]; then
 else
     status_xray="${RED}OFF${NC}"
 fi
-
+domainSock_dir="/run/xray";! [ -d $domainSock_dir ] && mkdir  $domainSock_dir
+chown www-data.www-data $domainSock_dir
 clear
 clear
 function add-host(){
@@ -169,7 +187,7 @@ echo -e "□ Operating System    = $( cat /etc/os-release | grep -w PRETTY_NAME 
 echo -e "□ Current Domain      = $( cat /etc/xray/domain )"
 echo -e "□ Server IP           = ${IP}"
 echo -e "□ Clients Name        = $Name"
-echo -e "□ Exfire Script VPS   = $Exp"
+echo -e "□ Exfire Script VPS   = $certificate ${GREEN}Days${NC}"
 echo -e "□ Time Reboot VPS     = 00:00 ${GREEN}( Jam 12 Malam )${NC}"
 echo -e "□ License Limit       = 3 VPS ${GREEN}( Persatu IP VPS )${NC}"
 echo -e "□ AutoScript By Dev   = XDRG ${GREEN}( MW-VPN )${NC}"
@@ -182,7 +200,7 @@ echo -e ""
 echo  "   —————————————————————————————————————————————————" | lolcat
 echo -e " [ ${GREEN}SSH WebSocket${NC} : ${GREEN}ON ]${NC}     [ ${GREEN}XRAY${NC} : ${status_xray} ]      [ ${GREEN}NGINX${NC} : ${status_nginx} ]"
 echo -e "$COLOR1─────────────────────────────────────────────────────────────${NC}"
-echo -e "□ ${GREEN}AutoScript By MW-VPN ${NC}         :${BLUE} t.me/ridwanstore112${NC}"
+echo -e "□ ${GREEN}AutoScript By MW-VPN ${NC}         :${BLUE} t.me/MasWayVPN${NC}"
 echo -e "□ ${GREEN}Patner Mg Store ${NC}              :${BLUE} t.me/kangbakso456${NC}"
 echo -e "□ ${GREEN}Ridwan Store. ${NC}                :${BLUE} t.me/r1f4n_1122${NC}"
 echo -e "□ ${GREEN}Geo Projek  ${NC}                  :${BLUE} t.me/tau_samawa ${NC}"
