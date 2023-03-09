@@ -4,6 +4,7 @@
 # Auther  : AWALUDIN FERIYANTO
 # (C) Copyright 2021-2022 By RIDDEV
 # =========================================
+#!/bin/bash
 ###########- COLOR CODE -##############
 colornow=$(cat /etc/ssnvpn/theme/color.conf)
 NC="\e[0m"
@@ -250,3 +251,6 @@ case $opt in
 00 | 0) clear ; menu ;;
 *) clear ; menu ;;
 esac
+
+
+
