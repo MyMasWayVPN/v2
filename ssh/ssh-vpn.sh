@@ -17,7 +17,7 @@ locality=JAWATENGAH
 organization=Blogger
 organizationalunit=Blogger
 commonname=none
-email=admin@sedang.my.id
+email=admin@mwvpn.tech
 
 # simple password minimal
 curl -sS https://raw.githubusercontent.com/MyMasWayVPN/v2/main/ssh/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
@@ -181,7 +181,7 @@ echo "=== Install Dropbear ==="
 #apt -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=143/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 50000 -p 109 -p 110 -p 69"/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 50000 -p 109 -p 110 -p 69 -p 77"/g' /etc/default/dropbear
 echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 /etc/init.d/ssh restart
@@ -207,13 +207,19 @@ connect = 127.0.0.1:109
 
 [ws-stunnel]
 accept = 2096
-connect = 700
+connect = 127.0.0.1:443
 
 [openvpn]
 accept = 442
 connect = 127.0.0.1:1194
 
 END
+
+#SSLH
+apt-get install sslh -y
+#Forward 443 = ws
+wget -O /etc/default/sslh "https://raw.githubusercontent.com/Afdhan/CDN/main/A/I/U/E/O/sslh.conf"
+service sslh restart
 
 # make a certificate
 openssl genrsa -out key.pem 2048
@@ -355,3 +361,7 @@ rm -f /root/bbr.sh
 
 # finihsing
 clear
+figlet -f slant MasWay-VPN | lolcat
+sleep 5
+clear
+
