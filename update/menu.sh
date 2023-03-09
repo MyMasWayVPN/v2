@@ -226,7 +226,7 @@ echo -e "  ${COLOR1}[05]${NC} • [${YELLOW}Menu${NC}] SS WS     ${COLOR1}[11]${
 echo -e "  ${COLOR1}[06]${NC} • [${YELLOW}Menu${NC}] SET DNS   ${COLOR1}[12]${NC} • RENEW CERT       $COLOR1 $NC"
 echo -e " ${RED}"
 echo -e "${COLOR1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${COLBG1                        ⇱ MW PROJECT ⇲                      ${NC}"
+echo -e "${COLBG1}                        ⇱ MW PROJECT ⇲                      ${NC}"
 echo -e "${COLOR1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo  "   —————————————————————————————————————————————————" | lolcat
 echo -e ""
