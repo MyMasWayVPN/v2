@@ -4,7 +4,13 @@
 # Auther  : AWALUDIN FERIYANTO
 # (C) Copyright 2021-2022 By RIDDEV
 # =========================================
-#!/bin/bash
+###########- COLOR CODE -##############
+colornow=$(cat /etc/ssnvpn/theme/color.conf)
+NC="\e[0m"
+RED="\033[0;31m" 
+COLOR1="$(cat /etc/ssnvpn/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
+COLBG1="$(cat /etc/ssnvpn/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"                    
+###########- END COLOR CODE -##########
 BURIQ () {
     curl -sS https://raw.githubusercontent.com/MyMasWayVPN/MyMasWayVPN.github.io/main/wkwkwkwk > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
@@ -177,9 +183,9 @@ fi
 }
 clear
 clear
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m                     ⇱ INFORMASI VPS ⇲                        \E[0m"
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+echo -e "${COLOR1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${COLBG1                     ⇱ INFORMASI VPS ⇲                        ${NC}"
+echo -e "${COLOR1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 
 echo -e "□ Sever Uptime        = $( uptime -p  | cut -d " " -f 2-10000 ) "
 echo -e "□ Current Time        = $( date -d "0 days" +"%d-%m-%Y | %X" )"
@@ -192,9 +198,9 @@ echo -e "□ Time Reboot VPS     = 00:00 ${GREEN}( Jam 12 Malam )${NC}"
 echo -e "□ License Limit       = 3 VPS ${GREEN}( Persatu IP VPS )${NC}"
 echo -e "□ AutoScript By Dev   = XDRG ${GREEN}( MW-VPN )${NC}"
 
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m                     ⇱ STATUS LAYANAN ⇲                       \E[0m"
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+echo -e "${COLOR1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${COLBG1}                     ⇱ STATUS LAYANAN ⇲                       ${NC}"
+echo -e "${COLOR1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
 
 echo  "   —————————————————————————————————————————————————" | lolcat
@@ -207,9 +213,9 @@ echo -e "□ ${GREEN}Geo Projek  ${NC}                  :${BLUE} t.me/tau_samawa
 echo -e "$COLOR1└────────────────────────────────────────────────────────────┘${NC}"
 echo -e ""
 echo  "   —————————————————————————————————————————————————" | lolcat
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m                     ⇱ MENU LAYANAN ⇲                         \E[0m"
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+echo -e "${COLOR1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${COLBG1}                     ⇱ MENU LAYANAN ⇲                         ${NC}"
+echo -e "${COLOR1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
 echo -e "  ${COLOR1}[01]${NC} • [${YELLOW}Menu${NC}] SSHWS     ${COLOR1}[07]${NC} • [${YELLOW}Menu${NC}] THEME     $COLOR1 $NC"   
 echo -e "  ${COLOR1}[02]${NC} • [${YELLOW}Menu${NC}] VMESS     ${COLOR1}[08]${NC} • [${YELLOW}Menu${NC}] BACKUP    $COLOR1 $NC"  
@@ -218,9 +224,9 @@ echo -e "  ${COLOR1}[04]${NC} • [${YELLOW}Menu${NC}] TROJAN    ${COLOR1}[10]${
 echo -e "  ${COLOR1}[05]${NC} • [${YELLOW}Menu${NC}] SS WS     ${COLOR1}[11]${NC} • ADD HOST/DOMAIN  $COLOR1 $NC"
 echo -e "  ${COLOR1}[06]${NC} • [${YELLOW}Menu${NC}] SET DNS   ${COLOR1}[12]${NC} • RENEW CERT       $COLOR1 $NC"
 echo -e " ${RED}"
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m                        ⇱ MW PROJECT ⇲                      \E[0m"
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+echo -e "${COLOR1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${COLBG1                        ⇱ MW PROJECT ⇲                      ${NC}"
+echo -e "${COLOR1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo  "   —————————————————————————————————————————————————" | lolcat
 echo -e ""
 
