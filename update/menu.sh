@@ -185,7 +185,7 @@ fi
 clear
 clear
 echo -e "${COLOR1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${COLBG1                     ⇱ INFORMASI VPS ⇲                        ${NC}"
+echo -e "${COLBG1}                     ⇱ INFORMASI VPS ⇲                        ${NC}"
 echo -e "${COLOR1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 
 echo -e "□ Sever Uptime        = $( uptime -p  | cut -d " " -f 2-10000 ) "
