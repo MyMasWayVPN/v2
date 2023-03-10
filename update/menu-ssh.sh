@@ -124,7 +124,7 @@ echo -e "$COLOR1 $NC  NS Slowdns : $dnsdomain"
 echo -e "$COLOR1 $NC  DNS PubKey : $dnskey" 
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "  GET wss://bug.com/ HTTP/1.1[crlf]Host: [host] [crlf]Upgrade: websocket[crlf][crlf]"
+echo -e "  GET wss://[host]/ HTTP/1.1[crlf]Host: MasWayVPN.com[crlf]Upgrade: websocket[crlf][crlf]"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
 echo -e "$COLOR1│${NC}                 • MW-VPN •                 $COLOR1│$NC"
@@ -150,7 +150,7 @@ echo -e "$COLOR1 $NC  NS Slowdns : $dnsdomain"
 echo -e "$COLOR1 $NC  DNS PubKey : $dnskey" 
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "  GET wss://bug.com/ HTTP/1.1[crlf]Host: [host] [crlf]Upgrade: websocket[crlf][crlf]"
+echo -e "  GET wss://[host]/ HTTP/1.1[crlf]Host: MasWayVPN.com[crlf]Upgrade: websocket[crlf][crlf]"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
 echo -e "$COLOR1│${NC}                 • MW-VPN •                 $COLOR1│$NC"
@@ -167,7 +167,7 @@ portsshws=`cat ~/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '
 if [ -f "/etc/systemd/system/sshws.service" ]; then
 clear
 else
-wget -q -O /usr/bin/proxy3.js "https://raw.githubusercontent.com/myridwan/multi-ws/ipuk/ssh/proxy3.js"
+wget -q -O /usr/bin/proxy3.js "https://raw.githubusercontent.com/MyMasWayVPN/v2/main/ssh/proxy3.js"
 cat <<EOF > /etc/systemd/system/sshws.service
 [Unit]
 Description=WSenabler
@@ -489,7 +489,7 @@ dnsdomain=$(cat /root/nsdomain)
 dnskey=$(cat /etc/slowdns/server.pub)
 
 
-Login=ssnvpn`</dev/urandom tr -dc X-Z0-9 | head -c4`
+Login=Trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
 hari="1"
 Pass=1
 echo Ping Host &> /dev/null
@@ -524,7 +524,7 @@ echo -e "$COLOR1 $NC  NS Slowdns : $dnsdomain"
 echo -e "$COLOR1 $NC  DNS PubKey : $dnskey" 
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "  GET wss://bug.com/ HTTP/1.1[crlf]Host: [host] [crlf]Upgrade: websocket[crlf][crlf]"
+echo -e "  GET wss://[host]/ HTTP/1.1[crlf]Host: MasWayVPN.com[crlf]Upgrade: websocket[crlf][crlf]"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
 echo -e "$COLOR1│${NC}                 • MW-VPN •                 $COLOR1│$NC"
@@ -552,7 +552,7 @@ echo -e "$COLOR1 $NC  NS Slowdns : $dnsdomain"
 echo -e "$COLOR1 $NC  DNS PubKey : $dnskey" 
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}  GET wss://bug.com/ HTTP/1.1[crlf]Host: [host] [crlf]Upgrade: websocket[crlf][crlf]"
+echo -e "$COLOR1 ${NC}  GET wss://[host]/ HTTP/1.1[crlf]Host: MasWayVPN.com[crlf]Upgrade: websocket[crlf][crlf]"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
 echo -e "$COLOR1│${NC}                 • MW-VPN •                 $COLOR1│$NC"
